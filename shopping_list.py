@@ -93,19 +93,23 @@ def get_price():
 def shop_list():
     shopping = True
     while shopping:
-        do = input('\nWould you like to show/add/delete or checkout: ')
-        if do == 'add':
+        do = input('\nWould you like to show/add/delete/quit or checkout: ')
+        if do.lower() == 'quit':
+            break
+        elif do.lower() == 'add':
             add_item()
-        elif do == 'delete':
+        elif do.lower() == 'delete':
             del_item()
-        elif do == 'show':
+        elif do.lower() == 'show':
             show_list()
-        elif do == 'checkout':
+        elif do.lower() == 'checkout':
             print("That will be: $", get_price(), sep='')
             last_call = input('\nLast Call: Edit or Continue ')
             if last_call.lower() == 'continue':
                 print("Thank you for Shopping with Us!")
                 shopping = False
+        else:
+            print("\nPlease enter an actual option silly")
 
 
 shop_list()
