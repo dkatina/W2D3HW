@@ -53,8 +53,11 @@ def del_item():
 
 def show_list():
     print("Your Shopping list: ")
-    for item, quant in my_list.items():
-        print(f"{item.title()} [{quant}]")
+    if my_list:
+        for item, quant in my_list.items():
+            print(f"{item.title()} [{quant}]")
+    else:
+        print("\nYour cart is empty.")
 
 def get_price():
     price = 0
