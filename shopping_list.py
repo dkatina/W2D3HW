@@ -93,12 +93,12 @@ def get_price():
 def shop_list():
     shopping = True
     while shopping:
-        do = input('\nWould you like to see/add/delete/checkout: ')
+        do = input('\nWould you like to show/add/delete or checkout: ')
         if do == 'add':
             add_item()
         elif do == 'delete':
             del_item()
-        elif do == 'see':
+        elif do == 'show':
             show_list()
         elif do == 'checkout':
             print("That will be: $", get_price(), sep='')
